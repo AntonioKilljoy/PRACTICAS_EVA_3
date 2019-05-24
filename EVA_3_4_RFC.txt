@@ -1,0 +1,127 @@
+MySQL Shell 8.0.15
+
+Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+Oracle is a registered trademark of Oracle Corporation and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+Type '\help' or '\?' for help; '\quit' to exit.
+
+ MySQL  JS > \sql
+Switching to SQL mode... Commands end with ;
+
+ MySQL  SQL > \connect --mc root@localhost
+Creating a Classic session to 'root@localhost'
+Fetching schema names for autocompletion... Press ^C to stop.
+Your MySQL connection id is 32
+Server version: 8.0.15 MySQL Community Server - GPL
+No default schema selected; type \use <schema> to set one.
+
+ MySQL  localhost:3306 ssl  SQL > use sakila
+Default schema set to `sakila`.
+Fetching table and column names from `sakila` for auto-completion... Press ^C to stop.
+
+ MySQL  localhost:3306 ssl  sakila  SQL > use eva_3
+Default schema set to `eva_3`.
+Fetching table and column names from `eva_3` for auto-completion... Press ^C to stop.
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select left ("Antonio Vazquez",0)
+                                      -> ;
++----------------------------+
+| left ("Antonio Vazquez",0) |
++----------------------------+
+|                            |
++----------------------------+
+1 row in set (0.0014 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select left ("Antonio Vazquez",1) ;
++----------------------------+
+| left ("Antonio Vazquez",1) |
++----------------------------+
+| A                          |
++----------------------------+
+1 row in set (0.0015 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select left ("Antonio Vazquez",5) ;
++----------------------------+
+| left ("Antonio Vazquez",5) |
++----------------------------+
+| Anton                      |
++----------------------------+
+1 row in set (0.0009 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select left ("Antonio Vazquez",8) ;
++----------------------------+
+| left ("Antonio Vazquez",8) |
++----------------------------+
+| Antonio                    |
++----------------------------+
+1 row in set (0.0018 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select dayofmonth('1998-12-08');
++--------------------------+
+| dayofmonth('1998-12-08') |
++--------------------------+
+|                        8 |
++--------------------------+
+1 row in set (0.0255 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select month('1998-12-08');
++---------------------+
+| month('1998-12-08') |
++---------------------+
+|                  12 |
++---------------------+
+1 row in set (0.0010 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select year('1998-12-08');
++--------------------+
+| year('1998-12-08') |
++--------------------+
+|               1998 |
++--------------------+
+1 row in set (0.0018 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select generar_rfc('Benjamin Antonio','vazquez','zavala','1998-08-12');
++-----------------------------------------------------------------+
+| generar_rfc('Benjamin Antonio','vazquez','zavala','1998-08-12') |
++-----------------------------------------------------------------+
+| vazB980812408                                                   |
++-----------------------------------------------------------------+
+1 row in set (0.0391 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select rand();
++-------------------+
+| rand()            |
++-------------------+
+| 0.459198357033728 |
++-------------------+
+1 row in set (0.0020 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select rand()*1000;
++-------------------+
+| rand()*1000       |
++-------------------+
+| 71.51482354059334 |
++-------------------+
+1 row in set (0.0018 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select flor(rand()*1000);
+ERROR: 1305 (42000): FUNCTION eva_3.flor does not exist
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select floor(rand()*1000);
++--------------------+
+| floor(rand()*1000) |
++--------------------+
+|                979 |
++--------------------+
+1 row in set (0.0018 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select generar_rfc('Benjamin Antonio','vazquez','zavala','1998-08-12');
++-----------------------------------------------------------------+
+| generar_rfc('Benjamin Antonio','vazquez','zavala','1998-08-12') |
++-----------------------------------------------------------------+
+| vazB980812685                                                   |
++-----------------------------------------------------------------+
+1 row in set (0.0032 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL >
